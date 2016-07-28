@@ -7,9 +7,7 @@ The script is able to avoid obstacles, stay within prescribed bounds and find it
 - [LejOS](http://www.lejos.org/ "LeJOS - Java for Lego Mindstorms")
 
 # Build
-Execute the [build.sh] script to minify main file, compile and link. Next, execute the following command to upload to your NXT brick (must be connected and be on):
-
-    nxjupload OmNomNom.java
+Execute the [build.sh] script to minify main file, compile, link and upload (your NXT brick must be connected and be on).
 
 # Files
 - [OmNomNomFull.java](https://github.com/kartikkumar/onnomnom/blob/master/OmNomNomFull.java): file containing all functionality; input parameters are defined in this file.
