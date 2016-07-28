@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Remove comments, newlines and multiple spaces. Store result in new file.
-grep -o '^[^/]*' OnNomNomFull.java | tr -d '\n' | tr -s ' ' > OnNomNom.java
-nxjc OnNomNom.java
-# nxjlink -v -o OnNomNom.nxj OnNomNom
+grep -o '^[^/]*' OmNomNomFull.java | tr -d '\n' | tr -s ' ' > OmNomNom.java
+nxjc OmNomNom.java
+nxjlink -v -o OmNomNom.nxj OmNomNom

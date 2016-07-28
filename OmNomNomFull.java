@@ -12,7 +12,7 @@ import lejos.robotics.navigation.Navigator;
 import lejos.nxt.Sound;
 import lejos.robotics.navigation.Waypoint;
 
-public class OnNomNom
+public class OmNomNom
 {
     DifferentialPilot pilot;
 
@@ -261,7 +261,7 @@ public class OnNomNom
         Motor.B.forward( );
 
         // Create on-board pilot and run motor.
-        OnNomNom omNomNom = new OnNomNom( );
+        OmNomNom omNomNom = new OmNomNom( );
         omNomNom.pilot = new DifferentialPilot( wheelDiameter, vehicleTrack, Motor.A, Motor.C );
         omNomNom.go( maximumTime,
                      returnHomeTime,
