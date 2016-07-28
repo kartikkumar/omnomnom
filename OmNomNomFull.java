@@ -16,23 +16,63 @@ public class OmNomNom
 {
     DifferentialPilot pilot;
 
-    public void go(  int maximumTime,
-                     int returnHomeTime,
-                     int returnHomeObstacleTime,
-                     int delay,
-                     boolean returnHomeBlind,
-                     int turnInterval,
-                     float initialHeading,
-                     float ultrasonicSensorOffsetX,
-                     float ultrasonicSensorOffsetY,
-                     int travelSpeed,
-                     double minimumDistance,
-                     double xMinimum,
-                     double xMaximum,
-                     double yMinimum,
-                     double yMaximum,
-                     double boundsTolerance,
-                     int perimeterLightLimit )
+    /////////////////////////////////////////////
+
+    // Set up input deck.
+
+    // Set maximum run time [ms].
+    static int maximumTime = 120 * 1000;
+
+    // Set return-to-base epoch [ms].
+    static int returnHomeTime = 60 * 1000;
+
+    // Set return-to-base obstacle avoidance time [ms].
+    static int returnHomeObstacleTime = 2000;
+
+    // Set delay [ms].
+    static int delay = 500;
+
+    // Set if the rover should return home blind (ignoring obstacles).
+    static boolean returnHomeBlind = true;
+
+    // Set turn interval [ms].
+    static int turnInterval = 20000;
+
+    // Set wheel diameter [cm].
+    static double wheelDiameter = 8.0;
+
+    // Set vehicle track [cm].
+    static double vehicleTrack = 15.0;
+
+    // Set initial heading [deg].
+    static float initialHeading = 0.0f;
+
+    // Set offset of ultrasonic sensor from center of robot [cm].
+    static float ultrasonicSensorOffsetX = 13.0f;
+    static float ultrasonicSensorOffsetY = 4.0f;
+
+    // Constant travel speed [cm/s].
+    static int travelSpeed = 10;
+
+    // Obstacle minimum distance [cm].
+    static double minimumDistance = 20.0;
+
+    // Area bounds and bounds tolerance [cm].
+    static double xMinimum = -90.0;
+    static double xMaximum = 90.0;
+    static double yMinimum = -90.0;
+    static double yMaximum = 90.0;
+    static double boundsTolerance = 10.0;
+
+    // Set scoop rotation speed [deg/s].
+    static int scoopRotationSpeed = 180;
+
+    // Set perimeter light value (light sensor reading for tape).
+    static int perimeterLightLimit = 30;
+
+    /////////////////////////////////////////////
+
+    public void go( )
     {
         // Create random number generator.
         Random random = new Random( );
@@ -196,62 +236,6 @@ public class OmNomNom
     {
         /////////////////////////////////////////////
 
-        // Set up input deck.
-
-        // Set maximum run time [ms].
-        int maximumTime = 120 * 1000;
-
-        // Set return-to-base epoch [ms].
-        int returnHomeTime = 60 * 1000;
-
-        // Set return-to-base obstacle avoidance time [ms].
-        int returnHomeObstacleTime = 2000;
-
-        // Set delay [ms].
-        int delay = 500;
-
-        // Set if the rover should return home blind (ignoring obstacles).
-        boolean returnHomeBlind = true;
-
-        // Set turn interval [ms].
-        int turnInterval = 20000;
-
-        // Set wheel diameter [cm].
-        double wheelDiameter = 8.0;
-
-        // Set vehicle track [cm].
-        double vehicleTrack = 15.0;
-
-        // Set initial heading [deg].
-        float initialHeading = 0.0f;
-
-        // Set offset of ultrasonic sensor from center of robot [cm].
-        float ultrasonicSensorOffsetX = 13.0f;
-        float ultrasonicSensorOffsetY = 4.0f;
-
-        // Constant travel speed [cm/s].
-        int travelSpeed = 10;
-
-        // Obstacle minimum distance [cm].
-        double minimumDistance = 20.0;
-
-        // Area bounds and bounds tolerance [cm].
-        double xMinimum = -90.0;
-        double xMaximum = 90.0;
-        double yMinimum = -90.0;
-        double yMaximum = 90.0;
-        double boundsTolerance = 10.0;
-
-        // Set scoop rotation speed [deg/s].
-        int scoopRotationSpeed = 180;
-
-        // Set perimeter light value (light sensor reading for tape).
-        int perimeterLightLimit = 30;
-
-        /////////////////////////////////////////////
-
-        /////////////////////////////////////////////
-
         // Execute run.
 
         // Set max rotational speed for scoop and set in motion [deg/s].
@@ -263,23 +247,7 @@ public class OmNomNom
         // Create on-board pilot and run motor.
         OmNomNom omNomNom = new OmNomNom( );
         omNomNom.pilot = new DifferentialPilot( wheelDiameter, vehicleTrack, Motor.A, Motor.C );
-        omNomNom.go( maximumTime,
-                     returnHomeTime,
-                     returnHomeObstacleTime,
-                     delay,
-                     returnHomeBlind,
-                     turnInterval,
-                     initialHeading,
-                     ultrasonicSensorOffsetX,
-                     ultrasonicSensorOffsetY,
-                     travelSpeed,
-                     minimumDistance,
-                     xMinimum,
-                     xMaximum,
-                     yMinimum,
-                     yMaximum,
-                     boundsTolerance,
-                     perimeterLightLimit );
+        omNomNom.go( );
 
         /////////////////////////////////////////////
     }
